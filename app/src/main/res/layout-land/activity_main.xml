@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgVista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/mar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="85dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgVista"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/btnatras"
+            android:layout_width="117dp"
+            android:layout_height="85dp"
+            android:layout_weight="2"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="screen"
+            android:onClick="atras"
+            android:scaleType="fitXY"
+            android:text="@string/atras"
+            android:textAlignment="viewStart"
+            app:srcCompat="@drawable/atras" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="320dp"
+            android:layout_height="0dp" />
+
+        <ImageButton
+            android:layout_width="117dp"
+            android:layout_height="85dp"
+            android:layout_weight="2"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="screen"
+            android:onClick="adelante"
+            android:scaleType="fitXY"
+            android:text="@string/alante"
+            android:textAlignment="viewStart"
+            app:srcCompat="@drawable/alante" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
