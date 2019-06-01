@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-
+//desarrollado en el curso de aplicaciones moviles del ITLA Bonao
 public class MainActivity extends AppCompatActivity {
 
     private String galeria = "";
@@ -46,9 +46,14 @@ public class MainActivity extends AppCompatActivity {
         String[] archivo;
         File dir = getExternalFilesDir(null);
 
-        archivo = dir.list();
+        try {
+            if (dir != null) {
+                archivo = dir.list();
+                archivos = new ArrayList<>(Arrays.asList(archivo));
+            }
+        } catch (Exception e) {
 
-        archivos = new ArrayList<>(Arrays.asList(archivo));
+        }
 
         cantidadFotos = archivos.size();
 
@@ -176,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             } catch (FileNotFoundException e) {
+                imagen.setImageBitmap(null);
             }
         }
     }
